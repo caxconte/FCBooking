@@ -1,23 +1,27 @@
 {
   "name": "fcbooking",
+  "description": "Ferramenta de booking dos escritórios da FCamara. <br/> O Projeto tem como fundamento facilitar o agendamento da ida de pessoas para o escritório respeitando as restrições devido a pandemia de covid-19, sendo que o maximo de pessoas no escritorio simultaneamente é atualmente 40% da capacidade total",
   "version": "1.0.0",
-  "description": "Ferramenta de booking dos escritórios da FCamara.\r <br/>\r O Projeto tem como fundamento facilitar o agendamento de pessoas para o escritório respeitando as restrições devido a pandemia de covid-19, sendo que o maximo de pessoas no escritorio simultaneamente é atualmente 40% da capacidade total.",
   "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "htmlhint": "htmlhint dist/*.html ",
+    "eslint": "eslint --ext .js src/ test/",
+    "stylelint": "stylelint --aei src/**/*.css",
+    "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
+    "test": "jest --coverage",
+    "start": "firebase serve --only hosting",
+    "deploy": "firebase deploy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/caxconte/FCBooking.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/caxconte/FCBooking/issues"
   },
-  "homepage": "https://github.com/caxconte/FCBooking#readme",
-  "dependencies": {
-    "firebase": "^9.0.1"
-  }
+  "homepage": "https://github.com/caxconte/FCBooking#readme"
 }
