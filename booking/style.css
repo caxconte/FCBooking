@@ -22,7 +22,7 @@
     align-items: center;
     justify-content: space-around;
 
-    width: 8%;
+    width: 100%;
 }
 
 .headerContent .menu .menuLinks .botao,
@@ -32,8 +32,9 @@
     color: #fff;
     background: #F24E1E;
 
+    cursor: pointer;
     padding: 13px 15px;
-    margin-right: 5px;
+
     border: none;
     border-radius: 50%;
 }
