@@ -5,21 +5,42 @@ export const Booking = () => {
   const container = `
     <div class="menu">
       <nav class="menuLinks">
-        <button class="botao" href="#">
-          <img src="/booking/images/perfil.svg" alt="Acesse seu perfil">
-        </button>
+        <ul>
+          <li>
+            <!--botao esquerda-->
+            <button id="perfil" class="botao" href="#">
+              <img src="images/perfil.svg" alt="Acesse seu perfil">
+            </button>
 
-        <img src="/booking/images/FCbookinglogo.svg" alt="Logo FCBooking">
-
-        <button id="sair" onClick="reply_click(this.id)" class="botaoSair" href="#">
-          <img src="/booking/images/perfil.svg" alt="Sair do seu perfil">
-        </button>
-      </nav >
+            <ul class="dpMenu">
+              <li><a href="#">Perfil</a></li>
+              <li><a href="#">Agendamentos</a></li>
+            </ul>
+          </li>
+          <li>
+            <!--logo-->
+            <img src="images/FCbookinglogo.svg" alt="Logo FCBooking">
+          </li>
+          <li>
+            <!--botão esquerda-->
+            <button id="sair" class="botaoSair" href="#">
+                <img src="images/perfil.svg" alt="Sair do seu perfil">
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   `;
 
   rootElement.innerHTML = container;
 
-  return rootElement;
+  const sair = rootElement.querySelector("#sair");
+  // const dropMenu = document.querySelector(".dpMenu")
   
+  sair.addEventListener('click', () => {
+    console.log("the user left");
+    navigation('/welcome'); // redireciona para a pagina de bem vindo
+  })
+
+  return rootElement;
 };
