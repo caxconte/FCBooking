@@ -1,23 +1,37 @@
-import { createUser } from "../../services/auth.js";
+import { navigation } from "../../routes.js";
 
 export const Login = () => {
-  const rootElement = document.createElement('div');
+  const rootElement = document.createElement('section');
+  rootElement.setAttribute('id', 'autenticacao');
+
   const container = `
-    <input type="email" id="email"></input>
-    <input type="password" id="password"></input>
-  
-    <button type="submit" id="submit"></button>
+    <form class="camposLogin" action="">
+      <input class="inputEmail" type="email" name="" id="emailAutenticacao" placeholder="Email">
+
+      <input class="inputSenha" type="password" name="" id="senhaAutenticacao" placeholder="Senha">
+
+      <input class="inputEnviar" type="submit" value="Entrar" id="enviarAutenticacao">
+    </form>
   `;
+
   rootElement.innerHTML = container;
 
-  const email = rootElement.querySelector('#email');
-  const password = rootElement.querySelector('#password');
-  const submit = rootElement.querySelector('#submit');
+  // pega o input submit
+  const enviar = rootElement.querySelector('#enviarAutenticacao');
 
-  submit.addEventListener('click', () => {
-    createUser(email, password);
-    navigation('/main');
-  })
+  // verifica o click no submit
+  enviar.addEventListener('click', () => {  
+    // pega o input de email
+    const email = rootElement.querySelector('#emailAutenticacao');
+    console.log(email.value);
+    // pega o input de senha
+    const senha = rootElement.querySelector('#senhaAutenticacao');
+    console.log(senha.value);
+
+    // chama a função pra fazer login
+    // createUser(email.value, senha.value);
+    navigation('/booking');
+  });
 
   return rootElement;
 

@@ -1,14 +1,17 @@
-import { Login } from "./pages/authentication/login";
+import { Login } from "./pages/authentication/login.js";
+import { Booking } from "./pages/main/booking.js";
+import { Welcome } from "./pages/onboarding/bemvindo.js";
 
 
 export const routeRender = () => {
   const elementRoute = document.querySelector('#root');
-  const auth = firebase.auth();
   let path = window.location.pathname;
 
   const routes = {
     '/': Login,
-    // '/login': Login,
+    '/login': Login,
+    '/booking': Booking,
+    '/welcome': Welcome,
   };
 
   // auth.onAuthStateChanged((user) => {
@@ -29,12 +32,14 @@ export const routeRender = () => {
   elementRoute.innerHTML = '';
   elementRoute.appendChild(routes[path]());
 
-};
+  // });
+  
+}
 
 window.addEventListener('load', routeRender);
 window.addEventListener('popstate', routeRender);
 
-const navigation = (path, state = {}) => {
+export const navigation = (path, state = {}) => {
   window.history.pushState(state, null, path);
 
   const popStateEvent = new PopStateEvent('popstate', { state });
