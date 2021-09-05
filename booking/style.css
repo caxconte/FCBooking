@@ -4,8 +4,10 @@
     box-sizing: border-box;
 }
 
+/* Menu */
+
 .headerContent {
-    padding: 20px;
+    padding: 15px;
     background: #C4C4C4;
 }
 
@@ -17,13 +19,58 @@
     width: 100%;
 }
 
+/* Itens menu */
+
 .headerContent .menu .menuLinks {
+    position: relative;
+}
+
+.headerContent .menu .menuLinks ul {
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    list-style: none;
     width: 100%;
 }
+
+.headerContent .menu .menuLinks ul li {
+    padding: 5px 100px 5px 5px;
+}
+
+@media (max-width: 900px) {
+    .headerContent .menu .menuLinks ul li {
+        padding: 0px 15px;
+    }
+}
+
+.headerContent .menu .menuLinks ul li .dpMenu a {
+    text-decoration: none;
+}
+
+/* dp menu links */
+.headerContent .menu .menuLinks .dpMenu {
+    display: none;
+    left: 0;
+
+    position: absolute;
+
+    padding: 5px;
+    width: 150px;
+    background: #C4C4C4;
+    border-radius: 10px;
+}
+
+.headerContent .menu .menuLinks li:hover .dpMenu {
+    display: block;
+}
+
+.headerContent .menu .menuLinks .dpMenu li a {
+    display: block;
+    color: #F24E1E;
+    font-weight: 600;
+}
+
+/* botões menu */
 
 .headerContent .menu .menuLinks .botao,
 .headerContent .menu .menuLinks .botaoSair {

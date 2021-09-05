@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,21 +9,34 @@
 
     <title>Booking | FCBooking</title>
 </head>
-    <body>
-        <section class="headerContent">
-            <div class="menu">
-                <nav class="menuLinks">
-                    <button class="botao" href="#">
-                        <img src="/booking/images/perfil.svg" alt="Acesse seu perfil">
-                    </button>
 
-                    <img src="/booking/images/FCbookinglogo.svg" alt="Logo FCBooking">
+<body>
+    <section class="headerContent">
+        <div class="menu">
+            <nav class="menuLinks">
+                <ul>
+                    <li> <button id="perfil" class="botao" href="#">
+                            <img src="/booking/images/perfil.svg" alt="Acesse seu perfil">
+                        </button>
+                        <ul class="dpMenu">
+                            <li><a href="#">Perfil</a></li>
+                            <li><a href="#">Agendamentos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <img src="/booking/images/FCbookinglogo.svg" alt="Logo FCBooking">
+                    </li>
+                    <li>
+                        <button id="sair" class="botaoSair" href="#">
+                            <img src="/booking/images/perfil.svg" alt="Sair do seu perfil">
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
 
-                    <button id="sair" onClick="reply_click(this.id)" class="botaoSair" href="#">
-                        <img src="/booking/images/perfil.svg" alt="Sair do seu perfil">
-                    </button>
-                </nav >
-            </div>
-        </section>
-    </body>
+    <script src="/booking/booking.js"></script>
+
+</body>
 </html>
