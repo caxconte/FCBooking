@@ -1,7 +1,6 @@
 import { Login } from "./pages/authentication/login.js";
-import { Booking } from "./pages/main/booking.js";
+import { Booking } from "./pages/booking/booking.js";
 import { Welcome } from "./pages/onboarding/bemvindo.js";
-
 
 export const routeRender = () => {
   const elementRoute = document.querySelector('#root');
