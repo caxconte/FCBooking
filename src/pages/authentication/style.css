@@ -15,7 +15,7 @@
 .inputSenha, .inputEmail{
   margin-bottom: 15px;
   padding: 8px;
-  border: solid 1px grey;
+  border: solid 1px var(--color-grey);
   border-radius: 20px;
 }
 
@@ -25,7 +25,5 @@ input:focus {
 }
 
 .inputEnviar {
-  border: solid 1px grey;
-  border-radius: 20px;
   padding: 5px 10px 5px 10px;
 }

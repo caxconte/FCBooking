@@ -1,4 +1,4 @@
-import { navigation } from "../../routes.js";
+import { navigation } from '../../routes.js';
 
 export const Login = () => {
   const rootElement = document.createElement('section');
