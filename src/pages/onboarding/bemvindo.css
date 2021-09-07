@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headerContent {
+    padding: 20px;
+    background: #F24E1E;
+}
+
+.headerContent .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.headerContent .menu .menuLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.BemVindo {
+    text-align: center;
+    padding-left: 517px;
+    padding-right: 469px;
+    padding-top: 10%;
+    font-family: 'Montserrat';
+}
+
+h1 {
+    color: #F24E1E;
+    font-size: 40px;
+}
+
+h2 {
+    padding: 10px 10px;
+}
+
+.explicacao {
+    padding-top: 10px;
+    padding: 15px 20px;
+    font-size: 16px;
+}
+
+.vamos {
+    text-decoration: none;
+    color: #fff;
+    background: #404099;
+    cursor: pointer;
+    padding: 15px 62px;
+    border: none;
+    align-items: center;
+}
