@@ -1,5 +1,16 @@
 import { navigation } from '../../routes.js';
+import { getDatabase, ref, set } from "firebase/database";
 
+const database = getDatabase();
+
+function createUser(email, password) {
+  set(ref(database, 'users/' + email), {
+    email: email,
+    password: password,
+  });
+}
+
+//spa
 export const Login = () => {
   const rootElement = document.createElement('section');
   rootElement.setAttribute('id', 'autenticacao');
@@ -20,7 +31,7 @@ export const Login = () => {
   const enviar = rootElement.querySelector('#enviarAutenticacao');
 
   // verifica o click no submit
-  enviar.addEventListener('click', () => {  
+  enviar.addEventListener('click', () => {
     // pega o input de email
     const email = rootElement.querySelector('#emailAutenticacao');
     console.log(email.value);
@@ -29,8 +40,10 @@ export const Login = () => {
     console.log(senha.value);
 
     // chama a função pra fazer login
-    // createUser(email.value, senha.value);
-    navigation('/booking');
+    createUser(email.value, senha.value);
+    console.log("operation complete")
+
+    //navigation('/booking');
   });
 
   return rootElement;
