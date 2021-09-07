@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.headerContent {
+    padding: 20px;
+    background: #F24E1E;
+}
+
+.headerContent .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.headerContent .menu .menuLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.Office {
+    text-align: center;
+    font-family: 'Montserrat';
+}
+
+h1 {
+    color: #F24E1E;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+h2 {
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.proximo {
+    text-decoration: none;
+    color: #fff;
+    background: #404099;
+    cursor: pointer;
+    padding: 15px 62px;
+    border: none;
+    align-items: center;
+}
