@@ -11,9 +11,16 @@
 
 .headerContent .menu {
     display: flex;
-    align-items: center;
     justify-content: space-around;
     width: 100%;
+}
+
+.Logo {
+    max-width: 200px;
+    max-height: 150px;
+    width: auto;
+    height: auto;
+    margin-left: -10px;
 }
 
 .headerContent .menu .menuLinks {
@@ -54,4 +61,6 @@ h2 {
     padding: 15px 62px;
     border: none;
     align-items: center;
+    font-family: 'Montserrat';
+    text-align: center;
 }
