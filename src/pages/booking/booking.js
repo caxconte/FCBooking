@@ -13,7 +13,7 @@ export const Booking = () => {
             <!--botao esquerda-->
 
             <button id="perfil" class="botao" href="#">
-              <img src="images/perfil.svg" alt="Acesse seu perfil">
+              <img src="../../images/perfil.svg" alt="Acesse seu perfil">
             </button>
 
             <ul class="dpMenu">
