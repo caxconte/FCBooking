@@ -22,6 +22,9 @@
     width: auto;
     height: auto;
     margin-left: -10px;
+    position: absolute;
+    left: 50px;
+    width: 300px;
 }
 
 .headerContent .menu .menuLinks {
