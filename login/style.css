@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #F24E1E;
+    --color-font: #fff;
+    --color-button: #404099;
+    --color-button-hover: #5353a3;
+}
+
+body {
+    background: var(--color-bg);
+}
+
+/* Section de toda a autenticação */
+#autenticacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+/* a div de conteúdo */
+section .autenticacaoContent {
+    margin-bottom: 200px;
+}
+
+/* centralização da imagem do logo */
+.logo {
+    display: block;
+    margin: 100px auto 20px;
+}
+
+/* h1 do site */
+section h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-font);
+    text-align: center;
+
+    font-size: 65px;
+    text-align: center;
+
+    margin-bottom: 100px;
+}
+
+/* centralizando os campos de input */
+section .autenticacaoContent .camposLogin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* estilização dos campos de input */
+section .autenticacaoContent .camposLogin .inputNome, .inputEmail {
+    border: none;
+    margin-bottom: 25px;
+    padding: 8px;
+    border-bottom: solid 2px var(--color-font);
+    background: transparent;
+    width: 130%;
+    color: var(--color-font);
+    font-family: 'Montserrat' sans-serif;
+    font-size: 20px;
+}
+
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+input::placeholder {
+    color: var(--color-font);
+    font-family: 'Montserrat' sans-serif;
+    font-size: 20px;
+}
+
+/* botão de enviar */
+section .autenticacaoContent .camposLogin .inputEnviar {
+    text-transform: uppercase;
+    background: var(--color-button);
+    padding: 15px 130px;
+    color: var(--color-font);
+    text-decoration: none;
+    border-radius: 5px;
+
+    margin-top: 70px;
+
+    border: none;
+
+    transition: .5s ease-in-out;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+.inputEnviar:hover {
+    background: var(--color-button-hover);
+}
+
+/* Ajuste da posição do ícone de dúvidas, ele está apenas dentro */
+.iconDuvidas {
+    position: fixed;
+    right: 450px;
+    bottom: 150px;
+}
+
+/* Tela mobile */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 60px;
+    }
+
+    section .autenticacaoContent .camposLogin .inputNome, .inputEmail {
+        width: 90%;
+    }
+
+    .iconDuvidas {
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+    }
+}
