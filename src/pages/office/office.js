@@ -1,11 +1,18 @@
-import { navigation } from '../../routes.js';
+const proximo = document.querySelector('#btnProx');
+proximo.addEventListener('click', () => {
 
+    let empresas = document.querySelectorAll(".checkbox");
 
+    let nome = [empresas[0].checked, empresas[1].checked];
 
-rootElement.innerHTML = container;
+    if (nome[0] == true) {
+        console.log("Matriz");
 
-const proximo = rootElement.querrySelector('#proximo');
+    } else if (nome[1] == true) {
+        console.log("Filial");
 
-proximo.addEventListener('Click', () => {
-    navigation('/booking')
-})
+    } else {
+        console.log("como caralhos vc fez isso?");
+    }
+
+});
