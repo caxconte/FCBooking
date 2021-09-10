@@ -52,11 +52,12 @@ async function readData(office) {
     }
 }
 
-function increment(office) {
+function increment(office, Data) {
     const db = getDatabase();
+    const data = Data;
     set(ref(db, `/office/${office}`), {
-
-        Atual: atual + 1,
+        Atual: data.Atual + 1,
+        Total: data.Total
     });
 }
 
@@ -93,13 +94,29 @@ app.get('/db/Santos', async (request, response) => {
 });
 
 app.post('/db/Matriz', async (request, response) => {
-    const snap = await readData("Matriz");
+    const which = "Matriz";
+    let snap = await readData(which);
     const atual = snap.Atual;
     const percent = await getPercent();
     const available = snap.Total * (percent / 100) - snap.Atual;
     if (available > 0) {
-        increment(snap, "Matriz");
-        snap = await readData("Matriz");
+        increment(which, snap);
+        snap = await readData(which);
+        response.json(["Success", snap.Atual]);
+    } else {
+        response.json("error");
+    }
+});
+
+app.post('/db/Santos', async (request, response) => {
+    const which = "Santos";
+    let snap = await readData(which);
+    const atual = snap.Atual;
+    const percent = await getPercent();
+    const available = snap.Total * (percent / 100) - snap.Atual;
+    if (available > 0) {
+        increment(which, snap);
+        snap = await readData(which);
         response.json(["Success", snap.Atual]);
     } else {
         response.json("error");
