@@ -12,7 +12,7 @@ proximo.addEventListener('click', () => {
         console.log("Filial");
 
     } else {
-        console.log("como caralhos vc fez isso?");
+        console.log("como vc fez isso?");
     }
 
 });
