@@ -4,4 +4,4 @@ const sair = rootElement.querySelector("#sair");
 sair.addEventListener('click', () => {
   console.log("the user left");
   navigation('/welcome');
-})
+});
