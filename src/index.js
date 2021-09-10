@@ -52,45 +52,56 @@ async function readData(office) {
     }
 }
 
-function increment(_atual) {
+function increment(office) {
     const db = getDatabase();
-    set(ref(db, '/santos'), {
-        atual: _atual + 1,
+    set(ref(db, `/office/${office}`), {
+
+        Atual: atual + 1,
     });
 }
 
 async function getPercent() {
     const dbRef = ref(getDatabase());
-    get(child(dbRef, `/MaxPercent`)).then((snapshot) => {
+    try {
+        const snapshot = await get(child(dbRef, `/MaxPercent`))
         if (snapshot.exists()) {
             return snapshot.val();
         } else {
             console.log("No data available");
         }
-    }).catch((error) => {
+    } catch (error) {
         console.error(error);
-    });
+    };
 }
 
 //recebe as quantidades da matriz
 app.get('/db/Matriz', async (request, response) => {
     const snap = await readData("Matriz");
     const percent = await getPercent();
-    const available = snap.Total*(percent/100)-snap.Atual
-    response(available)
-    // response.json(snap);
+    const available = snap.Total * (percent / 100) - snap.Atual;
+    const data = [available, snap.Atual];
+    response.json(data);
 });
 
 //recebe as quantidades de santos
 app.get('/db/Santos', async (request, response) => {
     const snap = await readData("Santos");
-    // response.json(snap);
+    const percent = await getPercent();
+    const available = snap.Total * (percent / 100) - snap.Atual;
+    const data = [available, snap.Atual];
+    response.json(data);
 });
 
-app.post('/db', async (request, response) => {
-    const santos = await readData();
-    const atual = santos.Atual;
-    increment(atual);
-
-    response.json(santos);
+app.post('/db/Matriz', async (request, response) => {
+    const snap = await readData("Matriz");
+    const atual = snap.Atual;
+    const percent = await getPercent();
+    const available = snap.Total * (percent / 100) - snap.Atual;
+    if (available > 0) {
+        increment(snap, "Matriz");
+        snap = await readData("Matriz");
+        response.json(["Success", snap.Atual]);
+    } else {
+        response.json("error");
+    }
 });
