@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Booking menu mobile</title>
+</head>
+<body>
+    <div class="menu">
+        <nav class="menuLinks">
+          <ul>
+            <li class="botaoEsquerda">
+  
+              <!--botao esquerda-->
+  
+              <button id="perfil" class="botao" href="#">
+                <p>Agendamentos</p>
+                <img src="images/perfil.svg" alt="Acesse seu perfil">
+              </button>
+  
+              <ul class="dpMenu">
+                <li><a href="#">Perfil</a></li>
+                <li><a href="#">Agendamentos</a></li>
+              </ul>
+  
+            </li>
+  
+            <li>
+              <!--logo-->
+              <img class="imgLogo" src="images/FCbookinglogo.svg" alt="Logo FCBooking">
+            </li>
+  
+            <!--botão direita -->
+  
+            <li class="botaoDireita">
+              <!-- para pegar o click e abrir o menu mobile usando um checkbox -->
+              <input type="checkbox" id="menuMobTransition">
+                <label for="menuMobTransition">
+                  <!-- "risquinho" do menu mobile -->
+                  <span class="menuMob"></span>
+                  <button id="sair" class="botaoSair" href="#">
+                    <img src="images/perfil.svg" alt="Sair do seu perfil">
+                  </button>
+                </label>
+                <!-- Opções menu mobile -->
+                <ul class="menuMobList">
+                  <li class="menuMobListItem"><a href="#">Perfil</a></li>
+                  <li class="menuMobListItem"><a href="#">Sair</a></li>
+                </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+</body>
+</html>

@@ -1,0 +1,251 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--color-background: #C4C4C4;
+--color-primary: #F24E1E;
+--color-secondary: #F78563;
+--color-grey: #706F6B;
+--color-grey-hover: #465959;
+--color-brown: #915135;
+--color-white: #fff; 
+--color-menuMob: black;
+}
+
+/* Menu */
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    padding: 15px;
+    background: var(--color-background);
+
+    width: 100%;
+}
+
+/* Itens menu */
+
+.menu .menuLinks {
+    position: relative;
+}
+
+.menu .menuLinks ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    width: 100%;
+}
+
+.menu .menuLinks ul li {
+    padding: 5px;
+}
+
+.menu .menuLinks .imgLogo {
+    padding: 0 100px;
+}
+
+/* dp menu links */
+
+.menu .menuLinks ul li .dpMenu a {
+    text-decoration: none;
+}
+
+.menu .menuLinks .dpMenu {
+    display: none;
+    left: 0;
+
+    position: absolute;
+
+    padding: 5px;
+    width: 150px;
+    background: var(--color-background);
+    border-radius: 10px;
+}
+
+.menu .menuLinks li:hover .dpMenu {
+    display: block;
+}
+
+.menu .menuLinks .dpMenu li a {
+    display: block;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* botões menu */
+.menu .menuLinks .botao,
+.menu .menuLinks .botaoSair {
+    text-decoration: none;
+
+    color: #fff;
+    background: var(--color-primary);
+
+    cursor: pointer;
+    padding: 13px 15px;
+
+    border: none;
+    border-radius: 50%;
+}
+
+/* Esconde o texto no desktop, para que apareça apenas no mobile (conexão com a linha 143) */
+.menu .menuLinks .botao p {
+    display: none;
+}
+
+/* esconde o checkbox */
+input {
+    display: none;
+}
+
+/* Esconde as opções do menu mobile (conexão com a linha 208) */
+.menuMobList .menuMobListItem {
+    display: none;
+}
+
+/* Menu e topo mobile */
+
+@media (max-width: 760px) {
+    /* Estilo e posição do topo */
+    .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    
+        padding: 40px;
+        background: var(--color-background);
+    
+        width: 100%;
+    }
+
+    /* Estilo e posição dos componentes do topo */
+    .menu .menuLinks ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        list-style: none;
+        width: 100%;
+    }
+    
+    .menu .menuLinks ul li {
+        padding: 0px 15px 0px 0px;
+    }
+
+    .menu .menuLinks .imgLogo {
+        padding: 0 20px 0 5px;
+    }
+
+    /* Estilo do botão da esquerda */
+    .menu .menuLinks .botao {
+        background: var(--color-primary);
+        border-radius: 10px;
+        padding: 14px ​10px;
+    }
+
+    
+    /* Oculta a imagem do botão da esquerda */
+    .menu .menuLinks .botao img {
+        display: none;
+    }
+    
+    /* Mostra o texto do botão da esquerda */
+    .menu .menuLinks .botao p {
+        display: block;
+    }
+
+    /* Esconde o botão da direita */
+    .menu .menuLinks .botaoSair {
+        display: none;
+    }
+
+    /* Esconde as opções do menu que seria o botão de agendamentos */
+    .menu .menuLinks ul li .dpMenu a {
+        display: none;
+    }
+    
+    .menu .menuLinks .dpMenu {
+        display: none;
+    }
+    
+    .menu .menuLinks li:hover .dpMenu {
+        display: none;
+    }
+    
+    .menu .menuLinks .dpMenu li a {
+        display: none;
+    }
+    
+    /* Estilização do menu hamburger */
+    .menu .menuLinks .menuMob {
+        display: block;
+        background: var(--color-primary);
+        position: relative;
+        height: 2px;
+        width: 35px;
+        transition: .5s ease-in-out;
+    }
+
+    /* Estilização do menu hamburger, adicionando as 2 outras linhas partes */
+    .menu .menuLinks .menuMob::before,
+    .menu .menuLinks .menuMob::after {
+        background: var(--color-primary);
+        position: absolute;
+        content: '';
+        display: block;
+        height: 100%; /* em relação ao de cima, 100% = 2px */
+        width: 100%; /* em relação ao de cima, 100% = 35px */
+        transition: .5s ease-in-out;
+    }
+
+    /* adiciona espaçamento na primeira linha e na última linha do menu mobile */
+    .menu .menuLinks .menuMob::before { top: -10px; }
+    .menu .menuLinks .menuMob::after { bottom: -10px; }
+
+    /* quando o input estiver checked (selecionado, clicado), vai pegar uma label próxima (~) e vai fazer a animação de virar um x para indicar o fechamento do menu */
+    input:checked ~ label .menuMob {
+        transform: rotate(45deg);
+    }
+    /* faz com que os risquinhos de cima e baixo vão para a mesma posição e formar o x */
+    input:checked ~ label .menuMob::before { 
+        transform: rotate(90deg);
+        top: 0!important;
+    }
+
+    input:checked ~ label .menuMob::after { 
+        transform: rotate(90deg);
+        bottom: 0!important;
+    }
+
+    /* expansão do menu mobile para mostrar as opções */
+    input:checked ~ label .menuMob {
+        box-shadow: 0 0 0 120vw var(--color-background), 0 0 0 120vh var(--color-background);
+    }
+
+    /* Itens menu mobile - DIFICULDADE 
+    input:checked ~ .menuMobList {
+        opacity: 1;
+    }
+
+    .menu .menuLinks .menuMob .menuMobList {
+        position: absolute;
+        list-style: none;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+    }
+
+    .menu .menuLinks .menuMob .menuMobList .menuMobListItem a {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--color-primary);
+        font-size: 40px;
+        text-decoration: none;
+    }
+    */
+}

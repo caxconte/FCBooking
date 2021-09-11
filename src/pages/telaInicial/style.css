@@ -79,7 +79,7 @@ section .content .contentBotao a {
 }
 
 section .content .contentBotao a:hover {
-    background: var(--color-button-hover)
+    background: var(--color-button-hover);
 }
 /* encerra a estilização da div contentBotao */
 
