@@ -1,0 +1,13 @@
+@import url(./pages/authentication/style.css);
+@import url(../src/pages/main/style.css);
+@import url(../src/pages/onboarding/style.css);
+@import url(../src/pages/office/office.css);
+:root {
+    --color-background: #C4C4C4;
+    --color-primary: #F24E1E;
+    --color-secondary: #F78563;
+    --color-grey: #706F6B;
+    --color-grey-hover: #465959;
+    --color-brown: #915135;
+    --color-white: #fff;
+}
