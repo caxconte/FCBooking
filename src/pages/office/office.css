@@ -23,7 +23,7 @@
     height: auto;
     margin-left: -10px;
     position: absolute;
-    left: 50px;
+    left: 150px;
     width: 300px;
 }
 
@@ -52,6 +52,11 @@ h2 {
 
 .h3 {
     text-align: left;
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 20px;
 }
 
 .mapas {
