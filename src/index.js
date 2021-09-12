@@ -23,6 +23,8 @@ const app = express();
 
 app.use(express.json());
 
+app.use(express.static(__dirname + '/pages/telaInicial'));
+
 const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Server started at ${PORT}...`));
@@ -74,6 +76,10 @@ async function getPercent() {
         console.error(error);
     };
 }
+
+// app.get('/', (req, res) =>{
+//     app.use(express.static(__dirname + '/pages/telaInicial/telaInicial.html'));
+// });
 
 //recebe as quantidades da matriz
 app.get('/db/Matriz', async (request, response) => {
