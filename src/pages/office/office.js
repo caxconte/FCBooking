@@ -1,4 +1,10 @@
 const proximo = document.querySelector('#btnProx');
+const sp =  document.querySelector("#percentSP")
+const st =  document.querySelector("#percentST")
+
+//sp.innerHTML = "testando se ta rolando"
+//st.innerHTML = "testando se ta rolando"
+
 proximo.addEventListener('click', () => {
 
     let empresas = document.querySelectorAll(".checkbox");
