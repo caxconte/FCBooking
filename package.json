@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "express": "^4.17.1",
     "firebase": "^9.0.1"
   },
   "scripts": {
@@ -10,5 +11,8 @@
     "test": "jest --coverage",
     "start": "firebase serve --only hosting",
     "deploy": "firebase deploy"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
