@@ -16,6 +16,7 @@
     background: var(--color-bg);
     padding: 20px;
     width: 100%;
+
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -117,69 +118,3 @@ input:checked ~ label .menu::after {
         width: 80%;
     }
 }
-
-.container {
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.sucess {
-    font-family: 'Montserrat' sans-serif;
-    font-weight: Bold;
-    font-size: 48px;
-    text-align: center;
-    margin: 0 auto 15px;
-}
-
-.icon-sucess {
-    width: 173px;
-    height: 173px;
-    margin: 120px auto 10px;
-}
-
-.reserved {
-    color: rgba(0, 0, 0, 1);
-    font-size: 18px;
-    text-align: center;
-    width: 35%;
-    font-family: 'Montserrat' sans-serif;
-}
-.buttons-container {
-    width: 25%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.btn {
-    background-color: rgba(196, 196, 196, 1);
-    border: none;
-    border-radius: 45px;
-    padding: 10px 30px;
-    margin: 45px 0;
-}
-
-.btn span {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
-/* Ajustes mobile */
-  @media (max-width: 768px) {
-    .reserved {
-        width: 80%;
-        margin: 0 auto 20px;
-    }
-
-    .icon-sucess {
-        margin: 80px auto 10px;
-    }
-
-    .buttons-container {
-        width: 80%;
-    }

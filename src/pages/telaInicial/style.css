@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #F24E1E;
+    --color-font: #fff;
+    --color-button: #404099;
+    --color-button-hover: #5353a3;
+}
+
+body {
+    background: var(--color-bg);
+}
+
+/* Ajustando a section para centralizar os conteúdos na tela */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Fonte, cor e alinhamento ao centro dos textos */
+section .content {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-font);
+    text-align: center;
+}
+
+/* Alinhamento da imagem ao centro */
+section .content img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 10px;
+}
+
+/* Estilo do h1 */
+section .content h1 {
+    font-size: 80px;
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+/* estilo da div que contém o texto e o botão do meio */
+section .content .contentBotao {
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+/* estilo do paragráfo da div contentBotao */
+section .content .contentBotao p {
+    font-size: 20px;
+    width: 60%;
+    margin: 0 auto 65px;
+}
+
+/* estilo do botão da div contentBotao */
+section .content .contentBotao a {
+    text-transform: uppercase;
+    background: var(--color-button);
+    padding: 15px 60px;
+    color: var(--color-font);
+    text-decoration: none;
+    border-radius: 5px;
+
+    transition: .5s ease-in-out;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+}
+
+section .content .contentBotao a:hover {
+    background: var(--color-button-hover);
+}
+/* encerra a estilização da div contentBotao */
+
+/* volta para a estilização do content, o último parágrafo */
+section .content p {
+    font-size: 23px;
+}
+
+section .content p a {
+    color: var(--color-font);
+}
+
+/* Ajuste da posição do ícone de dúvidas, ele está apenas dentro d */
+section .content .iconDuvidas {
+    position: fixed;
+    right: 450px;
+    bottom: 150px;
+}
+
+/* ajustes para que fique bonito no mobile */
+@media (max-width: 768px) {
+    section .content h1 {
+        font-size: 60px;
+    }
+
+    section .content .contentBotao p {
+        font-size: 17px;
+        width: 90%;
+    }
+
+    section .content .contentBotao a {
+        padding: 15px 40px;
+        font-size: 20px;
+    }
+
+    section .content p {
+        font-size: 20px;
+    }
+
+    section .content .iconDuvidas {
+        position: fixed;
+        right: 50px;
+        bottom: 50px;
+    }
+}
