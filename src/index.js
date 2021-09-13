@@ -23,20 +23,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use(express.static(__dirname + '/pages/telaInicial'));
+app.use(express.static(__dirname + '/pages'));
 
 const PORT = 3000;
 
 app.listen(PORT, () => console.log(`Server started at ${PORT}...`));
-
-//remake
-function writeUserData(userId, name, email) {
-    const db = getDatabase();
-    set(ref(db, '/user' + userId), {
-        username: name,
-        email: email,
-    });
-}
 
 async function readData(office) {
     const dbRef = ref(getDatabase());
@@ -77,17 +68,15 @@ async function getPercent() {
     };
 }
 
-// app.get('/', (req, res) =>{
-//     app.use(express.static(__dirname + '/pages/telaInicial/telaInicial.html'));
-// });
+//response.sendfile 
 
 //recebe as quantidades da matriz
 app.get('/db/Matriz', async (request, response) => {
     const snap = await readData("Matriz");
     const percent = await getPercent();
     const available = snap.Total * (percent / 100) - snap.Atual;
-    const data = [available, snap.Atual];
-    response.json(data);
+    const data = [available, snap.Atual, snap.Total];
+    return response.json(data);
 });
 
 //recebe as quantidades de santos
@@ -95,7 +84,7 @@ app.get('/db/Santos', async (request, response) => {
     const snap = await readData("Santos");
     const percent = await getPercent();
     const available = snap.Total * (percent / 100) - snap.Atual;
-    const data = [available, snap.Atual];
+    const data = [available, snap.Atual, snap.Total];
     response.json(data);
 });
 

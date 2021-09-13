@@ -22,3 +22,5 @@ proximo.addEventListener('click', () => {
     }
 
 });
+
+//fetch na rota dentro do index.js
