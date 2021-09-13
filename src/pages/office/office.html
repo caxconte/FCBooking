@@ -8,22 +8,29 @@
     <link rel="stylesheet" href="office.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
-    <title>Office</title>
+    <title>Office | FCBooking</title>
 </head>
 
 <body>
-    <section>
+    <section class="container">
 
         <section class="headerContent">
-            <div class="menu">
-                <nav class="menuLinks">
-
-                    <img class="Logo" src="/src/images/FCamaraLogo.png" alt="Logo FCBooking">
-
-                </nav>
-            </div>
-
-
+            <nav>
+                <li>
+                    <img class="logo" src="/src/images/FCamaraLogo.png" alt="Logo FCamara">
+                </li>
+                <li>
+                    <input type="checkbox" id="menuCheckbox">
+    
+                    <label for="menuCheckbox">
+                        <span class="menu"></span>
+                    </label>
+                    <ul class="submenu">
+                        <li><a class="submenuItem" href="google.com">Agendamentos</a></li>
+                        <li><a class="submenuItem" href="google.com">Sair</a></li>
+                    </ul>
+                </li>
+            </nav>
         </section>
 
         <section class="Office">
@@ -50,7 +57,7 @@
                     <input type="radio" class="checkbox" id="santos" name="escolha" value="Filial" checked="checked">
                     <label for="escolha2"></label>
 
-                    <h4>Santos-Filial</h4>
+                    <h4>Santos - Filial</h4>
                     <p>Praça Dos Expedicionários, 19 2° andar Gonzaga, Santos-SP</p>
                     <iframe class="mapinhas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3646.0348325846876!2d-46.333439085805715!3d-23.959208382287727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce030c4b240a97%3A0xb0e5218f7d1229d9!2sPr%C3%A7.%20dos%20Expedicion%C3%A1rios%2C%2019%20-%202%C2%B0%20andar%20-%20Gonzaga%2C%20Santos%20-%20SP%2C%2011065-500!5e0!3m2!1spt-BR!2sbr!4v1631105628421!5m2!1spt-BR!2sbr"
                         style="border:0;" allowfullscreen="" loading="lazy"></iframe>
